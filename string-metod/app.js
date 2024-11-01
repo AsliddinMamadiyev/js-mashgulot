@@ -52,3 +52,44 @@
 //     console.log(trimString(" JavaScript "));
 
 // ----6----
+
+
+// const person = {
+//     name: "Ali",
+//     age: 30,
+//     hobi: {
+//         music: 'rap',
+//         sports: 'football'
+//     }
+// };
+
+// for(let key in person) {
+//     console.log(`Property is ${key}, value ${person[key]}`);
+// } if(let hobi = Hobi) {
+//     console.log(`Hobi is ${hobi}`);
+// }
+
+let numberOfBooks = prompt("Nechta kitob o'qidingiz?");
+
+let booksDB = {
+    count: numberOfBooks || 0,
+    books: {},
+    authors: {},
+    genres: [],
+    isPublic: true
+};
+
+for (let i = 0; i < booksDB.count; i++) {
+    let bookName = prompt("Oxirgi o'qigan kitobingiz?");
+    let rating = prompt("Necha ball berasiz?");
+    
+    if (bookName && rating) {
+        booksDB.books[bookName] = rating;
+    }
+}
+
+if (booksDB.count > 0) {
+    console.log("Foydalanuvchi kitobxon:");
+} else {
+    console.log("Foydalanuvchi hali kitob o'qimagan.");
+}
